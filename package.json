@@ -1,0 +1,41 @@
+{
+  "name": "radial-menu",
+  "version": "0.0.1",
+  "description": "a radial menu",
+  "main": "dist/RadialMenu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "babel components --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Billes/react-radial-menu.git"
+  },
+  "keywords": [
+    "react",
+    "radial",
+    "menu",
+    "radialmenu"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "stage-0",
+      "react"
+    ]
+  },
+  "author": "Andrée Björkgård",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Billes/react-radial-menu/issues"
+  },
+  "homepage": "https://github.com/Billes/react-radial-menu#readme"
+}
