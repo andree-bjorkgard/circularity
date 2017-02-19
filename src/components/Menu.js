@@ -1,6 +1,6 @@
 import React from 'react'
 import cxs from 'cxs/monolithic'
-import RadialItem from './RadialItem'
+import Item from './Item'
 
 const s = {
   innerCircle: {
@@ -24,20 +24,20 @@ const getItems = (items, diameter) => {
   const radius = diameter / 2
 
   return items.map((item, index) => (
-    <RadialItem key={index} item={item} radius={radius} startAngle={(angle * index) + initialAngle} endAngle={((angle * index) + angle) + initialAngle} />
+    <Item key={index} item={item} radius={radius} startAngle={(angle * index) + initialAngle} endAngle={((angle * index) + angle) + initialAngle} />
   ))
 }
 
-const RadialMenu = ({ items, diameter }) => (
+const Menu = ({ items, diameter }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={diameter} height={diameter}>
     {getItems(items, diameter)}
     <circle className={cxs(s.innerCircle)} cx={diameter / 2} cy={diameter / 2} r={(diameter / 2) * 0.57} />
   </svg>
 )
 
-RadialMenu.propTypes = {
+Menu.propTypes = {
   items: React.PropTypes.array,
   diameter: React.PropTypes.number,
 }
 
-export default RadialMenu
+export default Menu

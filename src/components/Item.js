@@ -23,18 +23,18 @@ const getPieData = (radius, startAngle, endAngle) => {
 }
 
 
-const RadialItem = ({item, radius, startAngle, endAngle}) => (
+const Item = ({item, radius, startAngle, endAngle}) => (
   <a className={cxs(s.link)} href={item.route}>
     <path d={getPieData(radius, startAngle, endAngle)} fill="#E0E0E0" stroke="#cecece" strokeWidth="1" />
   </a>
 )
 
 
-RadialItem.propTypes = {
+Item.propTypes = {
   item: React.PropTypes.object,
   radius: React.PropTypes.number,
   startAngle: React.PropTypes.number,
   endAngle: React.PropTypes.number
 }
 
-export default RadialItem
+export default Item
