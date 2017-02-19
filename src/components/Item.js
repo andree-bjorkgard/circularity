@@ -1,10 +1,17 @@
-import React, {Component} from 'react'
+import React from 'react'
 import cxs from 'cxs/monolithic'
+import {getCircleX, getCircleY, getAngleBetween} from '../utils/calculations'
 
 const s = {
   link: {
     path:{
-      transition: 'fill 200ms ease',
+      transition: 'fill 100ms ease',
+      ':hover': {
+        fill: '#30C0FF'
+      }
+    },
+    use:{
+      transition: 'fill 100ms ease',
       ':hover': {
         fill: '#30C0FF'
       }
@@ -12,29 +19,42 @@ const s = {
   }
 }
 
-const getPieData = (radius, startAngle, endAngle) => {
-  // Radius is always gonna be the same as the center of the cirle
-  const x1 = radius + (radius * Math.cos(Math.PI * (startAngle/180)))
-  const y1 = radius + (radius * Math.sin(Math.PI * (startAngle/180)))
-  const x2 = radius + (radius * Math.cos(Math.PI * (endAngle/180)))
-  const y2 = radius + (radius * Math.sin(Math.PI * (endAngle/180)))
+const getPieData = (r, initialAngle, inc, centerX = r, centerY = r) => {
 
-  return `M${radius},${radius} L${x1},${y1} A${radius},${radius} 0 0 1 ${x2},${y2} z`
+  const x1 = getCircleX(r, initialAngle)
+  const y1 = getCircleY(r, initialAngle)
+  const x2 = getCircleX(r, initialAngle + inc)
+  const y2 = getCircleY(r, initialAngle + inc)
+
+  return `M${centerX},${centerY} L${x1},${y1} A${r},${r} 0 0 1 ${x2},${y2} z`
 }
 
-
-const Item = ({item, radius, startAngle, endAngle}) => (
-  <a className={cxs(s.link)} href={item.route}>
-    <path d={getPieData(radius, startAngle, endAngle)} fill="#E0E0E0" stroke="#cecece" strokeWidth="1" />
+const Item = ({item, radius, initialAngle, increment, hovered, unHovered, centerX = radius, centerY = radius}) => (
+  <a onMouseEnter={() => hovered(item)} onMouseLeave={() => unHovered(item)} className={cxs(s.link)} href={item.route}>
+      <path
+        d={getPieData(radius, initialAngle, increment)}
+        fill="#E0E0E0"
+        stroke="#cecece"
+        strokeWidth="1" />
+      <use
+        style={{color: '#404040'}}
+        transform={`translate(-${ radius * 0.1 } -${ radius * 0.1 })`}
+        width={`${radius * 0.2}px`}
+        height={`${radius * 0.2}px`}
+        x={getX(centerX, (radius * 0.78), getAngleBetween(initialAngle, initialAngle + increment))}
+        y={getY(centerY, (radius * 0.78), getAngleBetween(initialAngle, initialAngle + increment))}
+        xlinkHref={item.svgPath}
+      />
   </a>
 )
-
 
 Item.propTypes = {
   item: React.PropTypes.object,
   radius: React.PropTypes.number,
-  startAngle: React.PropTypes.number,
-  endAngle: React.PropTypes.number
+  initialAngle: React.PropTypes.number,
+  increment: React.PropTypes.number,
+  centerX: React.PropTypes.number,
+  centerY: React.PropTypes.number,
 }
 
 export default Item
