@@ -1,6 +1,6 @@
 import React from 'react'
 import cxs from 'cxs/monolithic'
-import {getCircleX, getCircleY, getAngleBetween} from '../utils/calculations'
+import {getCircleX, getCircleY, getX, getY, getAngleBetween} from '../utils/calculations'
 
 const s = {
   link: {
