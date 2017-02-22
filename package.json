@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "precompile": "npm install",
     "compile": "rm -rf dist && babel src/ --out-dir dist",
-    "prepublish": "npm build"
+    "prepublish": "npm build",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,12 @@
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0"
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.16.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.2",
+    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-standard": "^2.0.1"
   },
   "dependencies": {
     "cxs": "^3.0.4",
