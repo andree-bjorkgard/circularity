@@ -28,19 +28,19 @@ const InnerCircle = ({current, diameter}) => {
   const outerRadius = diameter / 2
   const innerRadius = outerRadius * circlePercentage
   let title = current.name ||  'Menu'
-  let svg = current.svgPath || null
+  let image = current.image || null
   let innerAdjacent = Math.sqrt(2) * innerRadius
 
   return (
     <g>
       <circle className={cxs(s.innerCircle)} cx={outerRadius} cy={outerRadius} r={innerRadius} />
       <svg className={cxs(s.innerContent)} x={getX(outerRadius,innerRadius, -135)} y={getY(outerRadius,innerRadius, -135)} width={innerAdjacent} height={innerAdjacent} >
-        <use
+        <image
           style={{color: '#404040'}}
           width={`${innerAdjacent * 0.7}px`}
           height={`${innerAdjacent * 0.7}px`}
           x={(innerAdjacent - (innerAdjacent * 0.7)) / 2} y={innerAdjacent * 0.05}
-          xlinkHref={svg}
+          xlinkHref={image}
         />
         <text x={innerAdjacent/2} y={innerAdjacent * 0.95} className={cxs(s.text)}>
           <tspan textAnchor="middle">{title}</tspan>

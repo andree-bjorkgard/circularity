@@ -29,21 +29,21 @@ const getPieData = (r, initialAngle, inc, centerX = r, centerY = r) => {
   return `M${centerX},${centerY} L${x1},${y1} A${r},${r} 0 0 1 ${x2},${y2} z`
 }
 
-const Item = ({item, radius, initialAngle, increment, hovered, unHovered, centerX = radius, centerY = radius}) => (
-  <a onMouseEnter={() => hovered(item)} onMouseLeave={() => unHovered(item)} className={cxs(s.link)} href={item.route}>
+const Item = ({item, radius, initialAngle, increment, actions, centerX = radius, centerY = radius}) => (
+  <a onMouseEnter={() => actions.hovered(item)} onMouseLeave={() => actions.unHovered(item)} className={cxs(s.link)} href={item.action}>
       <path
         d={getPieData(radius, initialAngle, increment)}
         fill="#E0E0E0"
         stroke="#cecece"
         strokeWidth="1" />
-      <use
+      <image
         style={{color: '#404040'}}
         transform={`translate(-${ radius * 0.1 } -${ radius * 0.1 })`}
         width={`${radius * 0.2}px`}
         height={`${radius * 0.2}px`}
         x={getX(centerX, (radius * 0.78), getAngleBetween(initialAngle, initialAngle + increment))}
         y={getY(centerY, (radius * 0.78), getAngleBetween(initialAngle, initialAngle + increment))}
-        xlinkHref={item.svgPath}
+        xlinkHref={item.image}
       />
   </a>
 )
