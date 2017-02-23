@@ -8,44 +8,53 @@ class Menu extends Component {
     super(props)
 
     this.state = {
-      hovered: {}
+      hoveredItemIndex: null
     }
   }
 
-  hovered(item){
-    if(item !== this.state.hovered)
-      this.setState({hovered: item})
+  updateHovered(index){
+    if(index !== this.state.hoveredItemIndex)
+      return this.setState({hoveredItemIndex: index})
+
+    this.setState({hoveredItemIndex: null})
   }
 
-  unHovered(item){
-    if(item === this.state.hovered)
-      this.setState({hovered: {}})
-  }
-
-  getItemActions(){
-    return {
-      hovered: this.hovered.bind(this),
-      unHovered: this.unHovered.bind(this)
-    }
-  }
-
-  getItems(items, diameter) {
+  getItems({ items, diameter }, hoveredIndex) {
     const north = -90
     const angle = ((1 / items.length) * 360)
     const radius = diameter / 2
 
     return items.map((item, index) => (
-      <Item key={index} item={item} actions={this.getItemActions()} radius={radius} angle={angle} initialAngle={(angle * index) + north} increment={angle} />
+      <Item
+        key={ index }
+        item={ item }
+        isHovered={ index === hoveredIndex }
+        onHoverChange={ this.updateHovered.bind(this, index) }
+        radius={ radius }
+        angle={ angle }
+        initialAngle={ (angle * index) + north }
+        increment={ angle } />
     ))
   }
 
+  getInnerCircle({ items, diameter }, index){
+    const current = (index !== null) ? items[index] : {}
+
+    return (
+      <InnerCircle
+        current={ current }
+        diameter={ diameter }
+      />
+    )
+  }
+
   render() {
-    const {items, diameter} = this.props
+    const { diameter } = this.props
 
     return (
       <svg xmlns="http://www.w3.org/2000/svg" width={diameter} height={diameter} preserveAspectRatio="xMidYMid meet">
-        {this.getItems(items, diameter)}
-        <InnerCircle current={this.state.hovered} diameter={diameter} />
+        { this.getItems(this.props, this.state.hoveredItemIndex) }
+        { this.getInnerCircle(this.props, this.state.hoveredItemIndex) }
       </svg>
     )
   }
