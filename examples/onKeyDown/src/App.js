@@ -70,13 +70,18 @@ class App extends Component{
   }
 
   hideMenu(e){
-
     if(e.keyCode === this.state.triggerKeyCode){
       document.removeEventListener('keyup', this.hideMenu, false)
       this.setState({showMenu: null})
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState){
+    if(this.state.position !== nextState.position)
+      return false
+
+    return true
+  }
 
   componentDidMount(){
     document.addEventListener('keydown', this.showMenu, false)
