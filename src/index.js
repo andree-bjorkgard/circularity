@@ -1,1 +1,1 @@
-export default from './components/Menu' 
+export {default} from './components/Menu' 
