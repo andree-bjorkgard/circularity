@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Item from './Item'
+import Sector from './Sector'
 import InnerCircle from './InnerCircle'
 
 class Menu extends Component {
@@ -25,7 +25,7 @@ class Menu extends Component {
     const radius = diameter / 2
 
     return items.map((item, index) => (
-      <Item
+      <Sector
         key={ index }
         item={ item }
         isHovered={ index === hoveredIndex }

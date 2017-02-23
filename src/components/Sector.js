@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import {getCircleX, getCircleY, getX, getY, getAngleBetween} from '../utils/calculations'
 
-class Item extends Component{
+class Sector extends Component{
 
-  getPieData(r, initialAngle, inc, centerX = r, centerY = r){
+  getSectorData(r, initialAngle, inc, centerX = r, centerY = r){
     const x1 = getCircleX(r, initialAngle)
     const y1 = getCircleY(r, initialAngle)
     const x2 = getCircleX(r, initialAngle + inc)
@@ -12,13 +12,13 @@ class Item extends Component{
     return `M${centerX},${centerY} L${x1},${y1} A${r},${r} 0 0 1 ${x2},${y2} z`
   }
 
-  renderItem({radius, initialAngle, increment, isHovered}){
+  renderSector({radius, initialAngle, increment, isHovered}){
     const fill = isHovered ? '#30C0FF' : '#E0E0E0'
 
     return (
       <path
         style={ {transition: 'fill 150ms ease'} }
-        d={ this.getPieData(radius, initialAngle, increment) }
+        d={ this.getSectorData(radius, initialAngle, increment) }
         fill={ fill }
         stroke='#CECECE'
         strokeWidth='1'
@@ -49,26 +49,27 @@ class Item extends Component{
         onMouseLeave={ onHoverChange }
         href={ item.action }
       >
-        { this.renderItem(this.props) }
+        { this.renderSector(this.props) }
         { this.renderImage(this.props) }
       </a>
     )
   }
 }
 
-Item.propTypes = {
+Sector.propTypes = {
+  increment: React.PropTypes.number,
+  initialAngle: React.PropTypes.number,
+  isHovered: React.PropTypes.bool,
   item: React.PropTypes.shape({
     action: React.PropTypes.oneOfType([
       React.PropTypes.string,
-      React.PropTypes.func
+      React.PropTypes.func,
     ]),
     image: React.PropTypes.string,
-    name: React.PropTypes.string
+    name: React.PropTypes.string,
   }),
+  onHoverChange: React.PropTypes.func,
   radius: React.PropTypes.number,
-  initialAngle: React.PropTypes.number,
-  increment: React.PropTypes.number,
-  onHoverChange: React.PropTypes.func
 }
 
-export default Item
+export default Sector
