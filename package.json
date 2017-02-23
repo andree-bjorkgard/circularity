@@ -4,8 +4,8 @@
   "description": "a radial menu built in react",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "rm -rf dist && babel src/ --out-dir dist",
+    "test": "jest",
+    "compile": "rm -rf dist && babel src --out-dir dist --ignore spec.js,test.js",
     "prepublish": "npm run compile",
     "lint": "eslint src"
   },
@@ -23,6 +23,7 @@
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
+    "babel-jest": "^19.0.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
@@ -31,7 +32,9 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.2",
     "eslint-plugin-react": "^6.10.0",
-    "eslint-plugin-standard": "^2.0.1"
+    "eslint-plugin-standard": "^2.0.1",
+    "jest": "^19.0.2",
+    "react-test-renderer": "^15.4.2"
   },
   "dependencies": {
     "cxs": "^3.0.4",
