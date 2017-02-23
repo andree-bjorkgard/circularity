@@ -1131,9 +1131,9 @@ circular-json@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
 
-circularity@0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/circularity/-/circularity-0.2.3.tgz#e0cbfb47452045cabe701ed5dfa9855805ebda43"
+circularity@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/circularity/-/circularity-0.3.0.tgz#c2b458febabc4815196506ddd93612e6926c0711"
   dependencies:
     cxs "^3.0.4"
     react "^15.4.2"
