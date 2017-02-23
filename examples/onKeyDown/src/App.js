@@ -9,7 +9,7 @@ const style = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    color: '#5b7945',
+    color: '#81868c',
     fontFamily: '"Quicksand", sans-serif',
     fontSize: 28
   },
