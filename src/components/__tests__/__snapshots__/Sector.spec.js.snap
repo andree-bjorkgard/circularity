@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fill color of sector changes when prop isHovered toggles 1`] = `
+<a
+  href="http://google.se"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <path
+    d="M200,200 L200,0 A200,200 0 0 1 328.5575219373079,46.791111376204384 z"
+    fill="#E0E0E0"
+    stroke="#CECECE"
+    strokeWidth="1"
+    style={
+      Object {
+        "transition": "fill 150ms ease",
+      }
+    }
+  />
+  <image
+    height="40px"
+    style={
+      Object {
+        "color": "#404040",
+      }
+    }
+    transform="translate(-20 -20)"
+    width="40px"
+    x={253.35514235880433}
+    xlinkHref="/path/to/img"
+    y={53.407951157398315}
+  />
+</a>
+`;
+
+exports[`Fill color of sector changes when prop isHovered toggles 2`] = `
+<a
+  href="http://google.se"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <path
+    d="M200,200 L200,0 A200,200 0 0 1 328.5575219373079,46.791111376204384 z"
+    fill="#30C0FF"
+    stroke="#CECECE"
+    strokeWidth="1"
+    style={
+      Object {
+        "transition": "fill 150ms ease",
+      }
+    }
+  />
+  <image
+    height="40px"
+    style={
+      Object {
+        "color": "#404040",
+      }
+    }
+    transform="translate(-20 -20)"
+    width="40px"
+    x={253.35514235880433}
+    xlinkHref="/path/to/img"
+    y={53.407951157398315}
+  />
+</a>
+`;
