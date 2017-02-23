@@ -60,7 +60,7 @@ Item.propTypes = {
   radius: React.PropTypes.number,
   initialAngle: React.PropTypes.number,
   increment: React.PropTypes.number,
-  actions: React.PropTypes.func
+  actions: React.PropTypes.object
 }
 
 export default Item
