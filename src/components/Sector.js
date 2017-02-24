@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React from 'react'
 import { getCircleX, getCircleY, getX, getY, getAngleBetween } from '../utils/calculations'
 
