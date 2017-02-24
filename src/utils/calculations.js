@@ -9,4 +9,4 @@ const getCircleY = (r, angle) => getY(r, r, angle)
 
 const getAngleBetween = (lowPoint, highPoint) => highPoint + ((lowPoint - highPoint) / 2)
 
-export {getX, getY, getCircleX, getCircleY, getAngleBetween}
+export { getX, getY, getCircleX, getCircleY, getAngleBetween }

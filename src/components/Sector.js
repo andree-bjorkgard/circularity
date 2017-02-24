@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {getCircleX, getCircleY, getX, getY, getAngleBetween} from '../utils/calculations'
+import { getCircleX, getCircleY, getX, getY, getAngleBetween } from '../utils/calculations'
 
 class Sector extends Component{
 
@@ -17,7 +17,7 @@ class Sector extends Component{
 
     return (
       <path
-        style={ {transition: 'fill 150ms ease'} }
+        style={ { transition: 'fill 150ms ease' } }
         d={ this.getSectorData(radius, B, C) }
         fill={ fill }
         stroke='#CECECE'
@@ -26,10 +26,10 @@ class Sector extends Component{
     )
   }
 
-  renderImage({item, parameters: { radius, B, C } }){
+  renderImage({ item, parameters: { radius, B, C } }){
     return (
       <image
-        style={ {color: '#404040'} }
+        style={ { color: '#404040' } }
         transform={ `translate(-${ radius * 0.1 } -${ radius * 0.1 })` }
         width={ `${radius * 0.2}px` }
         height={ `${radius * 0.2}px` }
@@ -67,6 +67,7 @@ Sector.propTypes = {
     image: React.PropTypes.string,
     name: React.PropTypes.string,
   }),
+  key: React.PropTypes.number,
   onHoverChange: React.PropTypes.func,
   parameters: React.PropTypes.shape({
     B: React.PropTypes.number,

@@ -1,6 +1,6 @@
 import React from 'react'
 import cxs from 'cxs/monolithic'
-import {getX, getY} from '../utils/calculations'
+import { getX, getY } from '../utils/calculations'
 
 const s = {
   innerCircle: {
@@ -24,7 +24,7 @@ const s = {
 
 const circlePercentage = 0.57
 
-const InnerCircle = ({current, diameter}) => {
+const InnerCircle = ({ current, diameter }) => {
   const outerRadius = diameter / 2
   const innerRadius = outerRadius * circlePercentage
   let title = current.name ||  'Menu'
@@ -36,7 +36,7 @@ const InnerCircle = ({current, diameter}) => {
       <circle className={cxs(s.innerCircle)} cx={outerRadius} cy={outerRadius} r={innerRadius} />
       <svg className={cxs(s.innerContent)} x={getX(outerRadius,innerRadius, -135)} y={getY(outerRadius,innerRadius, -135)} width={innerAdjacent} height={innerAdjacent} >
         <image
-          style={{color: '#404040'}}
+          style={{ color: '#404040' }}
           width={`${innerAdjacent * 0.7}px`}
           height={`${innerAdjacent * 0.7}px`}
           x={(innerAdjacent - (innerAdjacent * 0.7)) / 2} y={innerAdjacent * 0.05}

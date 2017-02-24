@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Sector from './Sector'
 import InnerCircle from './InnerCircle'
 
