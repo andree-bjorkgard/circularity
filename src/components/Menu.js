@@ -31,6 +31,7 @@ class Menu extends Component {
       return (
         <Sector
           key={ index }
+          index={ index }
           item={ item }
           isHovered={ index === hoveredIndex }
           onHoverChange={ this.updateHovered }
