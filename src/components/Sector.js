@@ -41,12 +41,12 @@ class Sector extends Component{
   }
 
   render(){
-    const { onHoverChange, item } = this.props
+    const { key, onHoverChange, item } = this.props
 
     return (
       <a
-        onMouseEnter={ onHoverChange }
-        onMouseLeave={ onHoverChange }
+        onMouseEnter={ () => onHoverChange(key) }
+        onMouseLeave={ () => onHoverChange(key) }
         href={ item.action }
       >
         { this.renderSector(this.props) }

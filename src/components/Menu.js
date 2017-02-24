@@ -10,6 +10,7 @@ class Menu extends Component {
     this.state = {
       hoveredItemIndex: null
     }
+    this.updateHovered.bind(this)
   }
 
   updateHovered(index){
@@ -32,7 +33,7 @@ class Menu extends Component {
           key={ index }
           item={ item }
           isHovered={ index === hoveredIndex }
-          onHoverChange={ this.updateHovered.bind(this, index) }
+          onHoverChange={ this.updateHovered }
           parameters={{
             radius: radius,
             B: B,
