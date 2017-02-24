@@ -10,7 +10,7 @@ class Menu extends Component {
     this.state = {
       hoveredItemIndex: null
     }
-    this.updateHovered.bind(this)
+    this.updateHovered = this.updateHovered.bind(this)
   }
 
   updateHovered(index){
