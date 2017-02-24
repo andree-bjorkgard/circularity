@@ -7,12 +7,14 @@ let props
 
 beforeEach(() => {
   props = {
-    increment: 40,
-    initialAngle: -90,
     isHovered: false,
     item: { action: 'http://google.se', image: '/path/to/img', name: 'whoops' },
     onHoverChange: () => 33,
-    radius: 200,
+    parameters: {
+      radius: 200,
+      B: -90,
+      C: -50,
+    }
   }
 })
 

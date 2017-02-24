@@ -14,27 +14,33 @@ class Menu extends Component {
 
   updateHovered(index){
     if(index !== this.state.hoveredItemIndex)
-      return this.setState({hoveredItemIndex: index})
+      return this.setState({ hoveredItemIndex: index })
 
-    this.setState({hoveredItemIndex: null})
+    this.setState({ hoveredItemIndex: null })
   }
 
   getItems({ items, diameter }, hoveredIndex) {
     const north = -90
-    const angle = ((1 / items.length) * 360)
+    const angle = (1 / items.length) * 360
     const radius = diameter / 2
 
-    return items.map((item, index) => (
-      <Sector
-        key={ index }
-        item={ item }
-        isHovered={ index === hoveredIndex }
-        onHoverChange={ this.updateHovered.bind(this, index) }
-        radius={ radius }
-        angle={ angle }
-        initialAngle={ (angle * index) + north }
-        increment={ angle } />
-    ))
+    return items.map((item, index) => {
+      const B = (angle * index) + north
+
+      return (
+        <Sector
+          key={ index }
+          item={ item }
+          isHovered={ index === hoveredIndex }
+          onHoverChange={ this.updateHovered.bind(this, index) }
+          parameters={{
+            radius: radius,
+            B: B,
+            C: B + angle
+          }}
+        />
+      )
+    })
   }
 
   getInnerCircle({ items, diameter }, index){
