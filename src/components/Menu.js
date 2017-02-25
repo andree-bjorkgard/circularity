@@ -68,14 +68,14 @@ class Menu extends Component {
 }
 
 Menu.propTypes = {
-  items: PropTypes.shape({
+  items: PropTypes.arrayOf(PropTypes.shape({
     action: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
     ]).isRequired,
     image: PropTypes.string,
     title: PropTypes.string,
-  }),
+  })).isRequired,
   diameter: PropTypes.number.isRequired,
 }
 
