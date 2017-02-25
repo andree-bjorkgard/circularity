@@ -55,22 +55,22 @@ const Sector = (props) => (
 )
 
 Sector.propTypes = {
-  index: React.PropTypes.number,
-  isHovered: React.PropTypes.bool,
+  index: React.PropTypes.number.isRequired,
+  isHovered: React.PropTypes.bool.isRequired,
   item: React.PropTypes.shape({
     action: React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.func,
-    ]),
+    ]).isRequired,
     image: React.PropTypes.string,
-    name: React.PropTypes.string,
+    title: React.PropTypes.string,
   }),
-  onHoverChange: React.PropTypes.func,
+  onHoverChange: React.PropTypes.func.isRequired,
   parameters: React.PropTypes.shape({
     B: React.PropTypes.number,
     C: React.PropTypes.number,
     radius: React.PropTypes.number,
-  })
+  }).isRequired
 }
 
 export default Sector

@@ -7,8 +7,9 @@ let props
 
 beforeEach(() => {
   props = {
+    index: 4,
     isHovered: false,
-    item: { action: 'http://google.se', image: '/path/to/img', name: 'whoops' },
+    item: { action: 'http://google.se', image: '/path/to/img', title: 'whoops' },
     onHoverChange: () => 33,
     parameters: {
       radius: 200,

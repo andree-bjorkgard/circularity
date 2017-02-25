@@ -12,7 +12,7 @@ test('render when current is set', () => {
     item: {
       action: 'http://google.se',
       image: '/path/to/img',
-      name: 'whoops'
+      title: 'whoops'
     },
     outerRadius: 200
   }
@@ -34,7 +34,7 @@ test('render when no image is set', () => {
   let props = {
     item: {
       action: 'http://google.se',
-      name: 'whoops'
+      title: 'whoops'
     },
     outerRadius: 200
   }

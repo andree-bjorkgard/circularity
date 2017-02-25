@@ -20,7 +20,7 @@ const s = {
 
 const defaults = {
   props: {
-    item: { name: 'Menu' },
+    item: { title: 'Menu' },
   },
   ratio: 0.57,
 }
@@ -61,7 +61,7 @@ const getContent = (item, outerRadius, radius, adjacent) => (
     width={ adjacent }
   >
     { getImage(adjacent, item.image) }
-    { getTitle(adjacent, item.name) }
+    { getTitle(adjacent, item.title) }
   </svg>
 )
 
@@ -92,7 +92,7 @@ InnerCircle.propTypes = {
       React.PropTypes.func,
     ]),
     image: React.PropTypes.string,
-    name: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string,
   }),
   outerRadius: React.PropTypes.number.isRequired,
 }

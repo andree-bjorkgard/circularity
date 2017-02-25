@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import Sector from './Sector'
 import InnerCircle from './InnerCircle'
 
@@ -68,8 +68,15 @@ class Menu extends Component {
 }
 
 Menu.propTypes = {
-  items: React.PropTypes.array,
-  diameter: React.PropTypes.number,
+  items: PropTypes.shape({
+    action: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+    ]).isRequired,
+    image: PropTypes.string,
+    title: PropTypes.string,
+  }),
+  diameter: PropTypes.number.isRequired,
 }
 
 export default Menu
