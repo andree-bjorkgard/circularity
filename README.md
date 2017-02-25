@@ -8,7 +8,7 @@ Circularity is a circular/radial menu built for React. The navigation can either
 
 ## Examples
 Examples can be found inside the examples directory. 
-They are set up with create-react-app, so they are easy to start and test.
+They are set up with create-react-app, so they are easy to start and test out.
 
 
 ## Installation
