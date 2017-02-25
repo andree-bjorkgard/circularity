@@ -1,6 +1,6 @@
 {
   "name": "circularity",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "a radial menu built in react",
   "main": "dist/index.js",
   "scripts": {

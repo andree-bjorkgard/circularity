@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Circularity from 'circularity'
 
 const style = {
@@ -64,7 +64,7 @@ class App extends Component{
 
   showMenu(e){
     if(e.keyCode === this.state.triggerKeyCode){
-      this.setState({showMenu: this.state.position})
+      this.setState({ showMenu: this.state.position })
       document.addEventListener('keyup', this.hideMenu, false)
     }
   }
@@ -72,7 +72,7 @@ class App extends Component{
   hideMenu(e){
     if(e.keyCode === this.state.triggerKeyCode){
       document.removeEventListener('keyup', this.hideMenu, false)
-      this.setState({showMenu: null})
+      this.setState({ showMenu: null })
     }
   }
 
@@ -85,7 +85,7 @@ class App extends Component{
 
   componentDidMount(){
     document.addEventListener('keydown', this.showMenu, false)
-    document.addEventListener('mousemove', (e) => this.setState({position: { x: e.clientX , y: e.clientY }}), false)
+    document.addEventListener('mousemove', (e) => this.setState({ position: { x: e.clientX , y: e.clientY } }), false)
   }
 
   getCssPositioning(position, radius){
@@ -96,7 +96,7 @@ class App extends Component{
     }
   }
 
-  renderMenu({ showMenu, diameter, modules}){
+  renderMenu({ showMenu, diameter, modules }){
     if(showMenu){
       const pos = this.getCssPositioning(showMenu, diameter / 2)
 
