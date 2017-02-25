@@ -19,8 +19,29 @@ beforeEach(() => {
 })
 
 const component = (props) => renderer.create(
-    <Sector {...props} />
+  <Sector {...props} />
 )
+
+test('render when action is a link', () => {
+  let tree = component(props).toJSON()
+  expect(tree).toMatchSnapshot()
+})
+
+test('render when action is a fn', () => {
+  props.item.action = () => 'oink'
+  let tree = component(props).toJSON()
+  expect(tree).toMatchSnapshot()
+})
+
+test('Fill color of sector changes when prop isHovered toggles', () => {
+  props.isHovered = false
+  let tree = component(props).toJSON()
+  expect(tree).toMatchSnapshot()
+
+  props.isHovered = true
+  tree = component(props).toJSON()
+  expect(tree).toMatchSnapshot()
+})
 
 test('When hovered over sector, onHoverChange should be called', () => {
   const mock = jest.fn()
@@ -30,16 +51,4 @@ test('When hovered over sector, onHoverChange should be called', () => {
   tree.props.onMouseEnter()
 
   expect(mock).toHaveBeenCalled()
-})
-
-test('Fill color of sector changes when prop isHovered toggles', () => {
-  props.isHovered = false
-  let tree = component(props).toJSON()
-
-  expect(tree).toMatchSnapshot()
-
-  props.isHovered = true
-  tree = component(props).toJSON()
-
-  expect(tree).toMatchSnapshot()
 })

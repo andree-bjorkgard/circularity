@@ -36,11 +36,18 @@ const renderImage = ({ item, parameters: { radius, B, C } }) => (
   />
 )
 
+const getAction = (action) => {
+  if(typeof action === 'function')
+    return { onClick: action }
+
+  return { href: action, target: '_blank' }
+}
+
 const Sector = (props) => (
   <a
     onMouseEnter={ () => props.onHoverChange(props.index) }
     onMouseLeave={ () => props.onHoverChange(props.index) }
-    href={ props.item.action }
+    { ...getAction(props.item.action) }
   >
     { renderSector(props) }
     { renderImage(props) }
