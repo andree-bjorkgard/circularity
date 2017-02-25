@@ -9,6 +9,7 @@
     "lint": "eslint src",
     "checks": "npm test && npm run lint",
     "prepublish": "npm run checks && npm run build",
+    "precommit": "npm run test",
     "prepush": "npm run checks"
   },
   "repository": {
