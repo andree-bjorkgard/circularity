@@ -2,6 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import Sector from './Sector'
 import InnerCircle from './InnerCircle'
 
+const defaults = {
+  props: {
+    diameter: 400
+  },
+}
+
 class Menu extends Component {
 
   constructor(props) {
@@ -66,6 +72,8 @@ class Menu extends Component {
     )
   }
 }
+
+Menu.defaultProps = defaults.props
 
 Menu.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
