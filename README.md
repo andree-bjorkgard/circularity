@@ -15,7 +15,7 @@ They are set up with create-react-app, so they are easy to start and test out.
 
 #### With npm
 ```
- npm install --save circularity
+npm install --save circularity
 ```
 #### with yarn
 ```
