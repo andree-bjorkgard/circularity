@@ -1,0 +1,13 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+  <path
+     d="M 6,2 l 1,8 l2,0 l 1,-8 z"
+     style="fill:currentColor;stroke:currentColor" />
+
+
+  <circle
+     cx="8"
+     cy="14"
+     r="2"
+     style="fill:#currentColor;stroke:none"
+     />
+</svg>
