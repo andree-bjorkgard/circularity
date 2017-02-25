@@ -37,7 +37,6 @@
     "react-test-renderer": "^15.4.2"
   },
   "dependencies": {
-    "cxs": "^3.0.4",
     "react": "^15.4.2"
   },
   "babel": {
