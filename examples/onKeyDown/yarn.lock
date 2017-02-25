@@ -1131,11 +1131,10 @@ circular-json@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
 
-circularity@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/circularity/-/circularity-0.3.0.tgz#c2b458febabc4815196506ddd93612e6926c0711"
+circularity@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/circularity/-/circularity-0.3.2.tgz#a7eae6fb1fe395def13090dde0f2842cb73e5015"
   dependencies:
-    cxs "^3.0.4"
     react "^15.4.2"
 
 clap@^1.0.9:
@@ -1496,12 +1495,6 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-0.2.37.tgz#541097234cb2513c83ceed3acddc27ff27987d54"
   dependencies:
     cssom "0.3.x"
-
-cxs@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/cxs/-/cxs-3.0.4.tgz#2e1a1537742931a53dbe3157afbf121da62df797"
-  dependencies:
-    glamor "^2.17.14"
 
 d@^0.1.1, d@~0.1.1:
   version "0.1.1"
@@ -2067,7 +2060,7 @@ fb-watchman@^1.8.0, fb-watchman@^1.9.0:
   dependencies:
     bser "1.0.2"
 
-fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.8:
+fbjs@^0.8.1, fbjs@^0.8.4:
   version "0.8.9"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.9.tgz#180247fbd347dcc9004517b904f865400a0c8f14"
   dependencies:
@@ -2266,14 +2259,6 @@ getpass@^0.1.1:
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.6.tgz#283ffd9fc1256840875311c1b60e8c40187110e6"
   dependencies:
     assert-plus "^1.0.0"
-
-glamor@^2.17.14:
-  version "2.20.23"
-  resolved "https://registry.yarnpkg.com/glamor/-/glamor-2.20.23.tgz#aa597b9b0e8835258d0655b19687dc4e772e6c49"
-  dependencies:
-    babel-runtime "^6.18.0"
-    fbjs "^0.8.8"
-    object-assign "^4.1.0"
 
 glob-base@^0.3.0:
   version "0.3.0"
