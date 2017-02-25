@@ -20,7 +20,7 @@ class Menu extends Component {
     this.setState({ hoveredItemIndex: null })
   }
 
-  getItems({ items, diameter }, hoveredIndex) {
+  getItems(diameter, items, hoveredIndex) {
     const north = -90
     const angle = (1 / items.length) * 360
     const radius = diameter / 2
@@ -45,24 +45,23 @@ class Menu extends Component {
     })
   }
 
-  getInnerCircle({ items, diameter }, index){
-    const current = (index !== null) ? items[index] : {}
-
+  getInnerCircle(diameter, item){
     return (
       <InnerCircle
-        current={ current }
-        diameter={ diameter }
+        item={ item }
+        outerRadius={ diameter / 2 }
       />
     )
   }
 
   render() {
-    const { diameter } = this.props
+    const { diameter, items } = this.props
+    const { hoveredItemIndex } = this.state
 
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width={diameter} height={diameter} preserveAspectRatio="xMidYMid meet">
-        { this.getItems(this.props, this.state.hoveredItemIndex) }
-        { this.getInnerCircle(this.props, this.state.hoveredItemIndex) }
+      <svg xmlns="http://www.w3.org/2000/svg" width={ diameter } height={ diameter } preserveAspectRatio="xMidYMid meet">
+        { this.getItems(diameter, items, hoveredItemIndex) }
+        { this.getInnerCircle(diameter, items[hoveredItemIndex]) }
       </svg>
     )
   }

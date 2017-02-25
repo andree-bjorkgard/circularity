@@ -1,5 +1,4 @@
 import React from 'react'
-import cxs from 'cxs/monolithic'
 import { getX, getY } from '../utils/calculations'
 
 const s = {
@@ -12,9 +11,6 @@ const s = {
     justifyContent: 'center',
     color: '#404040'
   },
-  innerContent: {
-    overflow: 'visible'
-  },
   text: {
     letterSpacing: '1px',
     fontWeight: 400,
@@ -22,37 +18,83 @@ const s = {
   }
 }
 
-const circlePercentage = 0.57
+const defaults = {
+  props: {
+    item: { name: 'Menu' },
+  },
+  ratio: 0.57,
+}
 
-const InnerCircle = ({ current, diameter }) => {
-  const outerRadius = diameter / 2
-  const innerRadius = outerRadius * circlePercentage
-  let title = current.name ||  'Menu'
-  let image = current.image || null
-  let innerAdjacent = Math.sqrt(2) * innerRadius
+const getImage = (adjacent, image = null) => {
+  if(!image)
+    return null
+
+  return (
+    <image
+      style={ { color: '#404040' } }
+      height={ `${ adjacent * 0.7 }px` }
+      width={ `${ adjacent * 0.7 }px` }
+      x={ (adjacent - (adjacent * 0.7)) / 2 }
+      y={ adjacent * 0.05 }
+      xlinkHref={ image }
+    />
+  )
+}
+
+const getTitle = (adjacent, title) => {
+  return (
+    <text
+      x={ adjacent / 2 }
+      y={ adjacent * 0.95 }
+      style={ s.text }
+    >
+      <tspan textAnchor="middle">{ title }</tspan>
+    </text>
+  )
+}
+
+const getContent = (item, outerRadius, radius, adjacent) => (
+  <svg
+    x={ getX(outerRadius, radius, -135) }
+    y={ getY(outerRadius, radius, -135) }
+    height={ adjacent }
+    width={ adjacent }
+  >
+    { getImage(adjacent, item.image) }
+    { getTitle(adjacent, item.name) }
+  </svg>
+)
+
+
+const InnerCircle = ({ outerRadius, item }) => {
+  const radius = outerRadius * defaults.ratio
+  const adjacent = Math.sqrt(2) * radius
 
   return (
     <g>
-      <circle className={cxs(s.innerCircle)} cx={outerRadius} cy={outerRadius} r={innerRadius} />
-      <svg className={cxs(s.innerContent)} x={getX(outerRadius,innerRadius, -135)} y={getY(outerRadius,innerRadius, -135)} width={innerAdjacent} height={innerAdjacent} >
-        <image
-          style={{ color: '#404040' }}
-          width={`${innerAdjacent * 0.7}px`}
-          height={`${innerAdjacent * 0.7}px`}
-          x={(innerAdjacent - (innerAdjacent * 0.7)) / 2} y={innerAdjacent * 0.05}
-          xlinkHref={image}
-        />
-        <text x={innerAdjacent/2} y={innerAdjacent * 0.95} className={cxs(s.text)}>
-          <tspan textAnchor="middle">{title}</tspan>
-        </text>
-      </svg>
+      <circle
+        style={ s.innerCircle }
+        cx={ outerRadius }
+        cy={ outerRadius }
+        r={ radius }
+      />
+        { getContent(item, outerRadius, radius, adjacent) }
     </g>
   )
 }
 
+InnerCircle.defaultProps = defaults.props
+
 InnerCircle.propTypes = {
-  current: React.PropTypes.object,
-  diameter: React.PropTypes.number,
+  item: React.PropTypes.shape({
+    action: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.func,
+    ]),
+    image: React.PropTypes.string,
+    name: React.PropTypes.string.isRequired,
+  }),
+  outerRadius: React.PropTypes.number.isRequired,
 }
 
 export default InnerCircle

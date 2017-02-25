@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render when current is not set 1`] = `
+<g>
+  <circle
+    cx={200}
+    cy={200}
+    r={113.99999999999999}
+    style={
+      Object {
+        "alignItems": "center",
+        "color": "#404040",
+        "display": "flex",
+        "fill": "#fff",
+        "flexDirection": "column",
+        "justifyContent": "center",
+      }
+    }
+  />
+  <svg
+    height={161.22034611053283}
+    width={161.22034611053283}
+    x={119.3898269447336}
+    y={119.38982694473358}
+  >
+    <text
+      style={
+        Object {
+          "fill": "#404040",
+          "fontWeight": 400,
+          "letterSpacing": "1px",
+        }
+      }
+      x={80.61017305526642}
+      y={153.15932880500617}
+    >
+      <tspan
+        textAnchor="middle"
+      >
+        Menu
+      </tspan>
+    </text>
+  </svg>
+</g>
+`;
+
+exports[`render when current is set 1`] = `
+<g>
+  <circle
+    cx={200}
+    cy={200}
+    r={113.99999999999999}
+    style={
+      Object {
+        "alignItems": "center",
+        "color": "#404040",
+        "display": "flex",
+        "fill": "#fff",
+        "flexDirection": "column",
+        "justifyContent": "center",
+      }
+    }
+  />
+  <svg
+    height={161.22034611053283}
+    width={161.22034611053283}
+    x={119.3898269447336}
+    y={119.38982694473358}
+  >
+    <image
+      height="112.85424227737298px"
+      style={
+        Object {
+          "color": "#404040",
+        }
+      }
+      width="112.85424227737298px"
+      x={24.183051916579927}
+      xlinkHref="/path/to/img"
+      y={8.061017305526642}
+    />
+    <text
+      style={
+        Object {
+          "fill": "#404040",
+          "fontWeight": 400,
+          "letterSpacing": "1px",
+        }
+      }
+      x={80.61017305526642}
+      y={153.15932880500617}
+    >
+      <tspan
+        textAnchor="middle"
+      >
+        whoops
+      </tspan>
+    </text>
+  </svg>
+</g>
+`;
+
+exports[`render when no image is set 1`] = `
+<g>
+  <circle
+    cx={200}
+    cy={200}
+    r={113.99999999999999}
+    style={
+      Object {
+        "alignItems": "center",
+        "color": "#404040",
+        "display": "flex",
+        "fill": "#fff",
+        "flexDirection": "column",
+        "justifyContent": "center",
+      }
+    }
+  />
+  <svg
+    height={161.22034611053283}
+    width={161.22034611053283}
+    x={119.3898269447336}
+    y={119.38982694473358}
+  >
+    <text
+      style={
+        Object {
+          "fill": "#404040",
+          "fontWeight": 400,
+          "letterSpacing": "1px",
+        }
+      }
+      x={80.61017305526642}
+      y={153.15932880500617}
+    >
+      <tspan
+        textAnchor="middle"
+      >
+        whoops
+      </tspan>
+    </text>
+  </svg>
+</g>
+`;
