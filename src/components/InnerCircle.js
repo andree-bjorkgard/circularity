@@ -66,7 +66,7 @@ const getContent = (item, outerRadius, radius, adjacent) => (
 )
 
 
-const InnerCircle = ({ outerRadius, item }) => {
+const InnerCircle = ({ item, outerRadius }) => {
   const radius = outerRadius * defaults.ratio
   const adjacent = Math.sqrt(2) * radius
 
