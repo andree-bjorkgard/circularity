@@ -7,11 +7,11 @@
     "test": "jest src",
     "build": "rm -rf dist && babel src --out-dir dist --ignore spec.js,test.js",
     "lint": "eslint src",
-    "checks": "npm test && npm run lint",
-    "prepublish": "npm run checks && npm run build",
-    "precommit": "npm run test",
-    "prepush": "npm run checks",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "checks": "yarn test && yarn run lint",
+    "prepublish": "yarn run checks && yarn run build",
+    "precommit": "yarn test",
+    "prepush": "yarn run checks",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
