@@ -2,5 +2,8 @@ language: node_js
 node_js:
   - "node"
   - "6"
+script:
+  - yarn run lint
+  - yarn test -- --coverage
 after_script:
-  yarn run lint
+  yarn run coveralls
