@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ingenalls/circularity.svg?branch=master)](https://travis-ci.org/ingenalls/circularity)
+[![Coverage Status](https://coveralls.io/repos/github/ingenalls/circularity/badge.svg?branch=master)](https://coveralls.io/github/ingenalls/circularity?branch=master)
 [![npm](https://img.shields.io/npm/v/circularity.svg)](https://www.npmjs.com/package/circularity)
 # Circularity
 
